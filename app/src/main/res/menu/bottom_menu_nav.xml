@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Trang chủ"
+        android:icon="@drawable/baseline_home_filled_24"
+        android:id="@+id/trangchu"/>
+
+    <item android:title="Ngân sách"
+        android:icon="@drawable/baseline_budget_24"
+        android:id="@+id/ngansach"/>
+
+    <item android:title="Thêm"
+        android:icon="@drawable/baseline_add_24"
+        android:id="@+id/them"/>
+
+    <item android:title="Chi tiêu"
+        android:icon="@drawable/baseline_spending_money_24"
+        android:id="@+id/chitieu"/>
+
+    <item android:title="Thống kê"
+        android:icon="@drawable/baseline_statistical_bar_chart_24"
+        android:id="@+id/thongke"/>
+</menu>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Bo tròn các góc -->
+    <corners android:radius="12dp"/>
+
+    <!-- Màu nền của Spinner -->
+    <solid android:color="#BAC8DD" />
+
+    <!-- Đường viền (nếu cần) -->
+    <stroke
+        android:width="2dp"
+        android:color="#2864C3" />
+</shape>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gui.gui_trangchu_Fragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/background_color_login">
+
+                <TextView
+                    android:id="@+id/txtXinChaoTK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Xin chào"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#474343"
+                        android:layout_margin="5dp"
+                        android:textSize="14sp"
+                        android:text="Tổng số dư"/>
+
+                    <TextView
+                        android:id="@+id/txtTongSoDu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:textSize="30sp"
+                        android:textColor="#16AF21"
+                        android:textStyle="bold"
+                        android:text="0 vnđ"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/custom_linearlayout">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#474343"
+                    android:text="Tình hình thu chi trong ngày"
+                    android:layout_margin="10dp"/>
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barChartThuChi"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="10dp"
+                    />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/custom_linearlayout">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#474343"
+                android:text="Tình hình chi tiêu trong ngày"
+                android:layout_margin="10dp"/>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/PiaChart"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

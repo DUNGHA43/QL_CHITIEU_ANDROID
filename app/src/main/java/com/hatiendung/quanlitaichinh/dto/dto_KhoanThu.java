@@ -1,0 +1,81 @@
+package com.hatiendung.quanlitaichinh.dto;
+
+public class dto_KhoanThu {
+    private int id;
+    private int taikhoan_id;
+    private double sotien;
+    private String nguonthu;
+    private String ngay;
+    private String mota;
+
+    public dto_KhoanThu() {
+    }
+
+    public dto_KhoanThu(int id, int taikhoan_id, double sotien, String nguonthu, String ngay, String mota) {
+        this.id = id;
+        this.taikhoan_id = taikhoan_id;
+        this.sotien = sotien;
+        this.nguonthu = nguonthu;
+        this.ngay = ngay;
+        this.mota = mota;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getTaikhoan_id() {
+        return taikhoan_id;
+    }
+
+    public void setTaikhoan_id(int taikhoan_id) {
+        this.taikhoan_id = taikhoan_id;
+    }
+
+    public double getSotien() {
+        return sotien;
+    }
+
+    public void setSotien(double sotien) {
+        this.sotien = sotien;
+    }
+
+    public String getNguonthu() {
+        return nguonthu;
+    }
+
+    public void setNguonthu(String nguonthu) {
+        this.nguonthu = nguonthu;
+    }
+
+    public String getNgay() {
+        return ngay;
+    }
+
+    public void setNgay(String ngay) {
+        this.ngay = ngay;
+    }
+
+    public String getMota() {
+        return mota;
+    }
+
+    public void setMota(String mota) {
+        this.mota = mota;
+    }
+
+    @Override
+    public String toString() {
+        return "dto_KhoanThu{" +
+                "taikhoan_id='" + taikhoan_id + '\'' +
+                ", sotien=" + sotien +
+                ", nguonthu='" + nguonthu + '\'' +
+                ", ngay='" + ngay + '\'' +
+                ", mota='" + mota + '\'' +
+                '}';
+    }
+}

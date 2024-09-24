@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background_color_login"
+    tools:context=".gui.gui_QuenMatKhau">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="35sp"
+                android:text="QUÊN MẬT KHẨU"
+                android:textAppearance="?android:textAppearanceLarge" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/txtGmailQMK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_background_login"
+                    android:padding="15dp"
+                    app:backgroundTint="@null"
+                    android:ems="10"
+                    android:layout_margin="5dp"
+                    android:inputType="text"
+                    android:textColor="#454141"
+                    android:hint="Nhập gmail của bạn..."
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/btnChonGmail"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="@null"
+                    android:layout_margin="8dp"
+                    android:padding="7dp"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#454141"
+                    android:textSize="24sp"
+                    android:background="@drawable/edittext_background_login"
+                    android:text="Tìm" />
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtTaiKhoanQMK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_background_login"
+                android:ems="10"
+                android:inputType="text"
+                android:padding="15dp"
+                android:text="Tài khoản:"
+                android:textColor="#454141"
+                android:textSize="20sp"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnGuiMaQMK"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@null"
+                android:layout_margin="8dp"
+                android:padding="7dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#454141"
+                android:textSize="24sp"
+                android:background="@drawable/edittext_background_login"
+                android:text="Gửi mã" />
+        </LinearLayout>
+
+            <EditText
+                android:id="@+id/txtMaXacNhanQMK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:background="@drawable/edittext_background_login"
+                android:padding="15dp"
+                android:layout_margin="5dp"
+                android:textColor="#454141"
+                app:backgroundTint="@null"
+                android:inputType="text"
+                android:hint="Nhập mã xác nhận..."
+                android:text="" />
+
+            <Button
+                android:id="@+id/btnXacNhanQMK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@null"
+                android:layout_margin="8dp"
+                android:padding="7dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#454141"
+                android:textSize="24sp"
+                android:background="@drawable/edittext_background_login"
+                android:text="Xác nhận" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

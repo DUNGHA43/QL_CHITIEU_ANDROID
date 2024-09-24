@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background_color_login"
+    tools:context=".gui.gui_DoiMatKhau">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="35sp"
+                android:text="ĐỔI MẬT KHẨU"
+                android:textAppearance="?android:textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/txtMatKhauMoi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:background="@drawable/edittext_background_login"
+                android:padding="15dp"
+                android:layout_margin="5dp"
+                android:textColor="#454141"
+                app:backgroundTint="@null"
+                android:inputType="textPassword"
+                android:hint="Nhập mật khẩu mới..."
+                android:text="" />
+            <EditText
+                android:id="@+id/txtXNMatKhauMoi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:background="@drawable/edittext_background_login"
+                android:padding="15dp"
+                android:layout_margin="5dp"
+                android:textColor="#454141"
+                app:backgroundTint="@null"
+                android:inputType="textPassword"
+                android:hint="Xác nhận mật khẩu mới..."
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/ckbCheckShowHideMK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#E1D6D6"
+                android:layout_marginLeft="5dp"
+                android:text="Hiển thị mật khẩu"/>
+
+
+            <Button
+                android:id="@+id/btnDoiMatKhau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@null"
+                android:layout_margin="8dp"
+                android:padding="7dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#454141"
+                android:textSize="24sp"
+                android:background="@drawable/edittext_background_login"
+                android:text="Đổi mật khẩu" />
+
+            <TextView
+                android:id="@+id/btnQuayLaiTrangDangNhap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:text="Quay lại trang đăng nhập?" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".gui.gui_DangKy"
+    android:background="@drawable/background_color_login">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="35sp"
+                android:text="ĐĂNG KÝ TÀI KHOẢN"
+                android:textAppearance="?android:textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/txtTaiKhoanDK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/edittext_background_login"
+                android:hint="Tài khoản..."
+                android:padding="15dp"
+                android:textColor="#454141"
+                app:backgroundTint="@null" />
+
+            <EditText
+                android:id="@+id/txtMatKhauDK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/edittext_background_login"
+                android:hint="Mật khẩu..."
+                android:padding="15dp"
+                android:textColor="#454141"
+                app:backgroundTint="@null"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:id="@+id/txtGmailDK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/edittext_background_login"
+                android:hint="Gmail..."
+                android:padding="15dp"
+                android:textColor="#454141"
+                app:backgroundTint="@null" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/txtMaXacThucDK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_background_login"
+                    android:hint="Nhập mã xác thực..."
+                    android:padding="15dp"
+                    android:textColor="#454141" />
+
+                <Button
+                    android:id="@+id/btnGuiMaXacThucDK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/edittext_background_login"
+                    app:backgroundTint="@null"
+                    android:textColor="#454141"
+                    android:padding="7dp"
+                    android:textSize="20sp"
+                    android:text="Gửi mã" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnDangKyTK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/edittext_background_login"
+                android:text="Đăng ký"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#454141"
+                android:textSize="24sp"
+                app:backgroundTint="@null" />
+
+            <TextView
+                android:id="@+id/btnQuayLaiDangNhap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:text="Đã có tài khoản? Đăng nhập."
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
