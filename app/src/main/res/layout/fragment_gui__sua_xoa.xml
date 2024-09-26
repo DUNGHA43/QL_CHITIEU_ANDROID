@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:text="0"
                     android:textAlignment="textEnd"
                     android:textColor="#B71C1C"

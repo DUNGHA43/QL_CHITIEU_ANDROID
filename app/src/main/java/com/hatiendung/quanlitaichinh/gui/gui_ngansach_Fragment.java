@@ -26,10 +26,12 @@ import com.hatiendung.quanlitaichinh.bll.bll_khoanthu;
 import com.hatiendung.quanlitaichinh.dto.dto_KhoanThu;
 
 import java.lang.reflect.Field;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,6 +62,7 @@ public class gui_ngansach_Fragment extends Fragment {
 
     String valueDateSelect, fomatDateSelect = "%Y-%m-%d";
     DateTimeFormatter fomatDate =  DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    NumberFormat numberFormat = NumberFormat.getInstance(new Locale("vi", "VN"));
     public gui_ngansach_Fragment() {
         // Required empty public constructor
     }
@@ -107,8 +110,8 @@ public class gui_ngansach_Fragment extends Fragment {
         }
 
         khoanthu_bll = new bll_khoanthu(requireContext());
-        txtNganSachTongKT.setText(khoanthu_bll.getSumNganSach(khoanthu_bll.getTaiKhoan_id(data))+" vnđ");
-        txtNganSachKTHT.setText(khoanthu_bll.getNganSachHT(khoanthu_bll.getTaiKhoan_id(data))+" vnđ");
+        txtNganSachTongKT.setText(numberFormat.format(khoanthu_bll.getSumNganSach(khoanthu_bll.getTaiKhoan_id(data)))+" vnđ");
+        txtNganSachKTHT.setText(numberFormat.format(khoanthu_bll.getNganSachHT(khoanthu_bll.getTaiKhoan_id(data)))+" vnđ");
         arrkhoanthu = new ArrayList<>();
         adapterKhoanThu = new adapter_recycle_khoanthu(requireContext(), arrkhoanthu, new adapter_recycle_khoanthu.OnItemClickListener() {
             @Override

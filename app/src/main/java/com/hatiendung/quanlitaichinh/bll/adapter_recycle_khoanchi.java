@@ -14,13 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hatiendung.quanlitaichinh.R;
 import com.hatiendung.quanlitaichinh.dto.dto_KhoanChi;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class adapter_recycle_khoanchi extends RecyclerView.Adapter<adapter_recycle_khoanchi.ViewHolderKhoanChi> {
     private Context context;
     private ArrayList<dto_KhoanChi> arrKhoanChi;
     private OnItemClickListener onItemClickListener;
-
+    private NumberFormat numberFormat = NumberFormat.getInstance(new Locale("vi", "VN"));
     public interface OnItemClickListener {
         void onItemClick(dto_KhoanChi khoanchi);
     }
@@ -44,7 +46,7 @@ public class adapter_recycle_khoanchi extends RecyclerView.Adapter<adapter_recyc
         holder.id.setText(khoanchi.getId()+"");
         holder.taikhoan_id.setText(khoanchi.getTaikhoan_id()+"");
         holder.danhmuc_id.setText(khoanchi.getDanhmuc_id()+"");
-        holder.sotien.setText(khoanchi.getSotien()+" vnđ");
+        holder.sotien.setText(numberFormat.format(khoanchi.getSotien())+" vnđ");
         holder.ngay.setText(khoanchi.getNgay());
         holder.mota.setText(khoanchi.getMota());
         switch (holder.danhmuc_id.getText().toString()){

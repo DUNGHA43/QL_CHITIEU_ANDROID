@@ -10,6 +10,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +32,7 @@ import java.lang.reflect.Field;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +62,7 @@ public class gui_chitieu_Fragment extends Fragment {
 
     String valueDateSelect, fomatDateSelect = "%Y-%m-%d";
     DateTimeFormatter fomatDate =  DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    NumberFormat numberFormat = NumberFormat.getInstance(new Locale("vi", "VN"));
     public gui_chitieu_Fragment() {
         // Required empty public constructor
     }
@@ -106,8 +110,8 @@ public class gui_chitieu_Fragment extends Fragment {
         }
 
         khoanchi_bll = new bll_khoanchi(requireContext());
-        txtNganSachKC.setText(khoanchi_bll.getSumNganSach(khoanchi_bll.getTaiKhoan_id(data))+" vnđ");
-        txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+        txtNganSachKC.setText(numberFormat.format(khoanchi_bll.getSumNganSach(khoanchi_bll.getTaiKhoan_id(data)))+" vnđ");
+        txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
         arrKhoanChi = new ArrayList<>();
         adapterKhoanChi = new adapter_recycle_khoanchi(requireContext(), arrKhoanChi, new adapter_recycle_khoanchi.OnItemClickListener() {
             @Override
@@ -141,7 +145,7 @@ public class gui_chitieu_Fragment extends Fragment {
             valueDateSelect = LocalDate.now()+"";
             fomatDateSelect = "%Y-%m-%d";
             loadDataKhoanChi(requireContext());
-            txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+            txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
         }
 
         if(checkOptions.equals("tháng")){
@@ -153,7 +157,7 @@ public class gui_chitieu_Fragment extends Fragment {
             valueDateSelect = LocalDate.now().getYear()+"-"+((thang.length() == 1) ? thang = "0"+thang : thang);
             fomatDateSelect = "%Y-%m";
             loadDataKhoanChi(requireContext());
-            txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+            txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
         }
 
         if(checkOptions.equals("năm")){
@@ -164,7 +168,7 @@ public class gui_chitieu_Fragment extends Fragment {
             valueDateSelect = LocalDate.now().getYear()+"";
             fomatDateSelect = "%Y";
             loadDataKhoanChi(requireContext());
-            txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+            txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
         }
         setEventButton();
         return view;
@@ -193,7 +197,7 @@ public class gui_chitieu_Fragment extends Fragment {
             valueDateSelect = LocalDate.now()+"";
             fomatDateSelect = "%Y-%m-%d";
             loadDataKhoanChi(requireContext());
-            txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+            txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
         });
         chonThangSKC.setOnClickListener(v -> {
             checkOptions = "tháng";
@@ -205,7 +209,7 @@ public class gui_chitieu_Fragment extends Fragment {
             valueDateSelect = LocalDate.now().getYear()+"-"+((thang.length() == 1) ? thang = "0"+thang : thang);
             fomatDateSelect = "%Y-%m";
             loadDataKhoanChi(requireContext());
-            txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+            txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
         });
         chonNamSKC.setOnClickListener(v -> {
             checkOptions = "năm";
@@ -216,7 +220,7 @@ public class gui_chitieu_Fragment extends Fragment {
             valueDateSelect = LocalDate.now().getYear()+"";
             fomatDateSelect = "%Y";
             loadDataKhoanChi(requireContext());
-            txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+            txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
         });
         txtChonThangSKC.setOnClickListener(v -> {
             Dialog dialog = new Dialog(requireContext());
@@ -247,7 +251,7 @@ public class gui_chitieu_Fragment extends Fragment {
                 valueDateSelect = datePicker.getYear()+"-"+thang;
                 fomatDateSelect = "%Y-&m";
                 loadDataKhoanChi(requireContext());
-                txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+                txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
                 dialog.dismiss();
             });
             btnCloseDate.setOnClickListener(set -> {
@@ -262,7 +266,7 @@ public class gui_chitieu_Fragment extends Fragment {
                 valueDateSelect = datePicker.getYear()+"-"+thang;
                 fomatDateSelect = "%Y-%m";
                 loadDataKhoanChi(requireContext());
-                txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+                txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
                 dialog.dismiss();
             });
             dialog.show();
@@ -297,7 +301,7 @@ public class gui_chitieu_Fragment extends Fragment {
                 valueDateSelect = datePicker.getYear()+"";
                 fomatDateSelect = "%Y";
                 loadDataKhoanChi(requireContext());
-                txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+                txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
                 dialog.dismiss();
             });
             btnCloseDate.setOnClickListener(set -> {
@@ -308,7 +312,7 @@ public class gui_chitieu_Fragment extends Fragment {
                 valueDateSelect = datePicker.getYear()+"";
                 fomatDateSelect = "%Y";
                 loadDataKhoanChi(requireContext());
-                txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+                txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
                 dialog.dismiss();
             });
             dialog.show();
@@ -341,7 +345,7 @@ public class gui_chitieu_Fragment extends Fragment {
                 valueDateSelect = datePicker.getYear()+"-"+thang+"-"+ngay;
                 fomatDateSelect = "%Y-%m-%d";
                 loadDataKhoanChi(requireContext());
-                txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+                txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
                 dialog.dismiss();
             });
 
@@ -364,7 +368,7 @@ public class gui_chitieu_Fragment extends Fragment {
                 valueDateSelect = datePicker.getYear()+"-"+thang+"-"+ngay;
                 fomatDateSelect = "%Y-%m-%d";
                 loadDataKhoanChi(requireContext());
-                txtChiPhiKC.setText(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect)+" vnđ");
+                txtChiPhiKC.setText(numberFormat.format(khoanchi_bll.getChiPhi(khoanchi_bll.getTaiKhoan_id(data), valueDateSelect, fomatDateSelect))+" vnđ");
                 dialog.dismiss();
             });
 

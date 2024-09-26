@@ -2,6 +2,7 @@ package com.hatiendung.quanlitaichinh.bll;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import javax.mail.MessagingException;
 import com.hatiendung.quanlitaichinh.dal.dal_gmailxacthuc;
@@ -27,7 +28,15 @@ public class bll_gmailxacthuc {
                 kt = false;
             }
         });
-        shutdownExecu();
+
+        executorService.shutdown();
+        try {
+            if (!executorService.awaitTermination(60, TimeUnit.SECONDS)) {
+                executorService.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executorService.shutdownNow();
+        }
         return kt;
     }
 

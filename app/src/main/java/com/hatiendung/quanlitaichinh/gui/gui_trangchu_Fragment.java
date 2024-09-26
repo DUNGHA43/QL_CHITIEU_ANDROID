@@ -21,8 +21,10 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 import com.hatiendung.quanlitaichinh.R;
@@ -51,6 +53,7 @@ public class gui_trangchu_Fragment extends Fragment {
     bll_khoanthu khoanthu_bll;
     bll_khoanchi khoanchi_bll;
     String data;
+    NumberFormat numberFormat = NumberFormat.getInstance(new Locale("vi", "VN"));
     public gui_trangchu_Fragment() {
         // Required empty public constructor
     }
@@ -94,7 +97,7 @@ public class gui_trangchu_Fragment extends Fragment {
         }
         anhxa(view);
         txtXinChaoTK.setText("Xin chào "+ data);
-        txtTongSoDu.setText(khoanthu_bll.getNganSachHT(khoanthu_bll.getTaiKhoan_id(data))+" vnđ");
+        txtTongSoDu.setText(numberFormat.format(khoanthu_bll.getNganSachHT(khoanthu_bll.getTaiKhoan_id(data)))+" vnđ");
         setDataBarChart();
         setDataPieChart();
         return view;
